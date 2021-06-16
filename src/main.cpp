@@ -1,5 +1,6 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <iostream>
 
 int main(void)
 {
@@ -19,6 +20,10 @@ int main(void)
 
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
+    if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
+        std::cout << "Failed to initialize OpenGL context" << std::endl;
+        return -1;
+    }
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
