@@ -1,0 +1,1 @@
+add_executable(opengl1 main.cpp)
